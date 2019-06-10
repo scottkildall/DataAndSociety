@@ -22,7 +22,7 @@ import processing.pdf.*;
 //-- DEFAULT VARIABLES
 final float defaultSize = 5;
 final int defaultCategoryNum = 0;
-final float  margin = 100;
+final float  margin = 150;
 
 float homeX;
 float homeY;
@@ -55,7 +55,7 @@ void setup() {
   //-- right now width and height have to be the same, otherwise it won't map properly
   //-- set to something like (2400,2400) for a large image
   size(800,800);
-  
+  rectMode(CENTER);
   loadData("data_input.csv");  
 }
 
@@ -101,12 +101,13 @@ void loadData(String filename) {
     
      if( x < minX )
       minX = x;
-    else if( x > maxX )
+    
+    if( x > maxX )
       maxX = x;
     
     if( y < minY )
       minY = y;
-    else if( y > maxY )
+    if( y > maxY )
       maxY = y;
   }  
   
